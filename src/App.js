@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {HashRouter, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './pages/Login/Login';
 import { UserAuthContextProvider } from './context/userAuthContext';
@@ -10,7 +10,7 @@ import Chat from './pages/Chat/Chat';
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <UserAuthContextProvider>
         <Routes>
           <Route path='/' element={<Login />} />
@@ -28,7 +28,7 @@ function App() {
         </Routes>
         <Toaster />
       </UserAuthContextProvider>
-    </Router>
+    </HashRouter>
   );
 }
 
